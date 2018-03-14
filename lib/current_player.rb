@@ -1,14 +1,15 @@
-players = [0,1]
-counter = 0
-def turn_count
-  if counter % 2 == 0
-    return player1 
-  else
-    return player2
-  end  
+def turn_count(board)
+  counter = 0
+  board.each do |board|
+    if board == "X" || board == "O"
+    counter+= 1 
+  end
+end
+  return counter
 end
 
-def current_player 
- player.each do |player|
-   puts "#{player} it's your turn"
+
+def current_player(board)
+  turn_count(board) % 2 == 0 ? "X" : "O"
 end
+ 
